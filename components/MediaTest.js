@@ -17,6 +17,9 @@ const Container = styled.div`
   flex-direction: row;
   column-gap: 30px;
   padding: 4rem 4rem;
+  justify-content: center;
+  overflow: auto;
+  
 `;
 
 const Select = styled.select`
@@ -27,8 +30,14 @@ const Select = styled.select`
   font-size: 16px;
 `;
 
+const Filters = styled.div`
+display: flex;
+gap: 26px;
+`;
+
 const Section = styled.section`
   width: 100%;
+  max-width: 340px;
   height: fit-content;
   background-color: #0d150e;
   border: 1px solid #ffffff1f;
@@ -38,8 +47,25 @@ const Section = styled.section`
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 `;
+
+const VideoSection = styled.section`
+  width: 100%;
+  max-width: 340px;
+  height: fit-content;
+  background-color: #0d150e;
+  border: 1px solid #ffffff1f;
+  min-height: 200px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+`;
+
 
 const ImageContainer = styled.div`
   width: 200px;
@@ -77,6 +103,24 @@ const IconBox = styled.button`
   border-radius: 6px;
 `;
 
+const FilterIconBox = styled.button`
+width: 80px;
+height: 80px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px #ffffff1f solid;
+border-radius: 6px;
+`;
+
+const FilterIconContainer = styled.div`
+  display: flex;
+  color: #3ce666;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 26px;
+`;
+
 const Title = styled.div`
   color: white;
   font-size: 1.5rem;
@@ -103,6 +147,7 @@ const MediaTest = () => {
   const [isVideoOn, setIsVideoOn] = useState(true);
   const [isAudioOn, setIsAudioOn] = useState(true);
   const videoRef = useRef(null);
+  const [filterBtn, setFilterBtn] = useState(3);
 
   useEffect(() => {
     const fetchDevices = async () => {
@@ -241,7 +286,7 @@ const MediaTest = () => {
           </Select>
         </SelectSet>
       </Section>
-      <Section>
+      <VideoSection>
         <ImageContainer>
           <Video ref={videoRef} autoPlay playsInline />
         </ImageContainer>
@@ -255,7 +300,7 @@ const MediaTest = () => {
             {isAudioOn ? <Mic /> : <MicOff />}
           </IconBox>
         </IconContainer>
-      </Section>
+      </VideoSection>
 
       <Section>
         {/* ...existing elements... */}
@@ -266,20 +311,27 @@ const MediaTest = () => {
           max="2"
           step="0.1"
           onChange={handleVolumeChange}
+          style={{marginBottom:"50px", marginTop:"20px",}}
         />
 
         <Title>Filter</Title>
-        <IconContainer>
-          <button onClick={() => applyVideoFilter("grayscale(100%)")}>
-            Grayscale
-          </button>
-        </IconContainer>
-        <IconContainer>
-          <button onClick={() => applyVideoFilter("sepia(100%)")}>Sepia</button>
-        </IconContainer>
-        <IconContainer>
-          <button onClick={() => applyVideoFilter("none")}>No Filter</button>
-        </IconContainer>
+          <Filters>
+          <FilterIconContainer>
+          <FilterIconBox onClick={() =>{ applyVideoFilter("grayscale(100%)"); setFilterBtn(1)}} className={`${filterBtn == 1 ? "bg-[#3CE666] text-white":"bg-[#0D150E]"}`}>
+            <Blend/>
+          </FilterIconBox>
+        </FilterIconContainer>
+        <FilterIconContainer>
+          <FilterIconBox onClick={() => {applyVideoFilter("sepia(100%)"); setFilterBtn(2)}} className={`${filterBtn == 2 ? "bg-[#3CE666] text-white":"bg-[#0D150E]"}`}>
+            <Paintbrush/>
+          </FilterIconBox>
+        </FilterIconContainer>
+        <FilterIconContainer>
+         <FilterIconBox onClick={() => {applyVideoFilter("none"); setFilterBtn(3)}} className={`${filterBtn == 3 ? "bg-[#3CE666] text-white":"bg-[#0D150E]"}`}>
+          <CircleOff/>
+         </FilterIconBox>
+        </FilterIconContainer>
+          </Filters>
       </Section>
     </Container>
   );
