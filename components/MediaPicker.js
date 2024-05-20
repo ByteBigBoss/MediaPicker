@@ -135,7 +135,7 @@ const SelectSet = styled.div`
   margin-top: 20px;
 `;
 
-const MediaTest = () => {
+const MediaPicker = () => {
   const [videoDevices, setVideoDevices] = useState([]);
   const [audioInputDevices, setAudioInputDevices] = useState([]);
   const [audioOutputDevices, setAudioOutputDevices] = useState([]);
@@ -338,4 +338,4 @@ const MediaTest = () => {
   );
 };
 
-export default MediaTest;
+export default MediaPicker;

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import MediaTest from '../../components/MediaTest';
+import MediaPicker from '../../components/MediaPicker';
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <h1 className='text-[2rem] font-medium'>Media Picker</h1>
       <h3 className='text-[1rem] opacity-80'>Developed by @bytebigboss</h3>
       </div>
-      <MediaTest />
+      <MediaPicker />
     </div>
   );
 };
