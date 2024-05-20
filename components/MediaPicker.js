@@ -1,4 +1,4 @@
-// components/MediaTest.js
+// components/MediaPicker.js
 import React, { useEffect, useState, useRef } from "react";
 import { getMediaDevices } from "../utils/getMediaDevices";
 import styled from "styled-components";

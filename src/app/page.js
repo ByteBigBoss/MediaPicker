@@ -1,3 +1,4 @@
+// /page.js
 "use client"
 import React from 'react';
 import MediaPicker from '../../components/MediaPicker';
