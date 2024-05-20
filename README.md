@@ -74,8 +74,7 @@ For any questions or issues, please open an issue on the [GitHub repository](htt
 
 After installation, you can start using the MediaPicker project in your application. Below is an example of how to integrate and use the various features:
 
-<details>
-    <summary>1. **Create `getMediaDevices.js` Utility File**:</summary>
+1. **Create `getMediaDevices.js` Utility File**:
     ```javascript
     // utils/getMediaDevices.js
     export const getMediaDevices = async () => {
@@ -87,7 +86,6 @@ After installation, you can start using the MediaPicker project in your applicat
       };
     };
     ```
-<details>
     
 2. **Create `MediaPicker.js` Component**:
 
