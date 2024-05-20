@@ -1,39 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediaPicker Project
 
-## Contribute to this project
-Contribute to this open-source project. 
+## Overview
 
-## Getting Started
+The MediaPicker project is a comprehensive solution designed to enable users to capture media (camera, audio, and speaker input) from their devices and apply filters to videos. This project aims to provide a robust and flexible framework for integrating media capturing and processing capabilities into various applications.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Camera Integration**: Capture video directly from the device's camera.
+- **Audio Recording**: Record audio using the device's microphone.
+- **Speaker Input**: Capture audio output from the device's speaker.
+- **Video Filters**: Apply a variety of filters to enhance or modify the captured video.
+- **Cross-Platform Support**: Compatible with multiple platforms, ensuring a wide range of device compatibility.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To install the MediaPicker project, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/yourusername/MediaPicker.git
+    ```
 
-## Learn More
+2. **Navigate to the Project Directory**:
+    ```bash
+    cd MediaPicker
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Install Dependencies**:
+    - For Node.js (if applicable):
+        ```bash
+        npm install
+        ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Build the Project**:
+    ```bash
+    npm run build
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+After installation, you can start using the MediaPicker project in your application. Below is an example of how to integrate and use the various features:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```javascript
+import { MediaPicker } from 'mediapicker';
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+// Initialize MediaPicker
+const mediaPicker = new MediaPicker();
+
+// Capture video from camera
+mediaPicker.captureVideo()
+    .then(videoStream => {
+        console.log('Video captured:', videoStream);
+        // Apply filters to the video
+        mediaPicker.applyFilter(videoStream, 'filterName')
+            .then(filteredVideo => {
+                console.log('Filtered video:', filteredVideo);
+            })
+            .catch(error => console.error('Error applying filter:', error));
+    })
+    .catch(error => console.error('Error capturing video:', error));
+
+// Record audio
+mediaPicker.recordAudio()
+    .then(audioStream => {
+        console.log('Audio recorded:', audioStream);
+    })
+    .catch(error => console.error('Error recording audio:', error));
