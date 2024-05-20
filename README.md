@@ -18,7 +18,7 @@ To install the MediaPicker project, follow these steps:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/MediaPicker.git
+    git clone https://github.com/ByteBigBoss/MediaPicker
     ```
 
 2. **Navigate to the Project Directory**:
