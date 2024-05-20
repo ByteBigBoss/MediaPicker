@@ -18,7 +18,7 @@ To install the MediaPicker project, follow these steps:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/ByteBigBoss/MediaPicker
+    git clone https://github.com/ByteBigBoss/MediaPicker.git
     ```
 
 2. **Navigate to the Project Directory**:
@@ -36,6 +36,39 @@ To install the MediaPicker project, follow these steps:
     ```bash
     npm run build
     ```
+
+## Contributing
+
+We welcome contributions to enhance the MediaPicker project. To contribute, please follow these steps:
+
+1. **Fork the Repository**: Click the "Fork" button on the top right corner of this page.
+2. **Clone Your Fork**:
+    ```bash
+    git clone https://github.com/ByteBigBoss/MediaPicker.git
+    ```
+3. **Create a Branch**:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+4. **Make Your Changes**: Implement your feature or fix a bug.
+5. **Commit Your Changes**:
+    ```bash
+    git commit -m "Add feature/fix: description of the change"
+    ```
+6. **Push to Your Fork**:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+7. **Create a Pull Request**: Open a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+For any questions or issues, please open an issue on the [GitHub repository](https://github.com/yourusername/MediaPicker) or contact the project maintainers.
+
 
 ## Usage
 
@@ -416,7 +449,7 @@ After installation, you can start using the MediaPicker project in your applicat
 4. **Running the Application**:
 
     - Ensure you have all necessary dependencies installed, including `react`, `styled-components`, and `lucide-react`.
-    - Start your development server using a command like `npm start` or `yarn start` depending on your package manager.
+    - Start your development server using a command like `npm run dev` or `yarn start` depending on your package manager.
     - Open your browser and navigate to the application to see the MediaPicker in action.
 
 5. **Using the Features**:
