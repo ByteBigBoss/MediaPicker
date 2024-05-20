@@ -67,7 +67,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or issues, please open an issue on the [GitHub repository](https://github.com/yourusername/MediaPicker) or contact the project maintainers.
+For any questions or issues, please open an issue on the [GitHub repository](https://github.com/ByteBigBoss/MediaPicker) or contact the project maintainers.
 
 
 ## Usage
