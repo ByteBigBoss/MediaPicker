@@ -311,6 +311,7 @@ const MediaTest = () => {
           max="2"
           step="0.1"
           onChange={handleVolumeChange}
+          className="text-yellow-50"
           style={{marginBottom:"50px", marginTop:"20px",}}
         />
 
