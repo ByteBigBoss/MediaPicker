@@ -4,6 +4,8 @@
 
 The MediaPicker project is a comprehensive solution designed to enable users to capture media (camera, audio, and speaker input) from their devices and apply filters to videos. This project aims to provide a robust and flexible framework for integrating media capturing and processing capabilities into various applications.
 
+![Project Design UI/UX](https://github.com/ByteBigBoss/MediaPicker/blob/main/public/MediaPicker.png)
+
 ## Features
 
 - **Camera Integration**: Capture video directly from the device's camera.
